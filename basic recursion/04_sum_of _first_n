@@ -1,0 +1,7 @@
+def sum(i,n):
+    i=i+n
+    if n==0:
+        print(i)
+        return
+    sum(i,n-1)
+sum(0,5)
