@@ -1,0 +1,7 @@
+def fibonacci(n):
+    if n<=1:
+        return n
+    l=fibonacci(n-1)
+    sl=fibonacci(n-2)
+    return l+sl
+print(fibonacci(4))

@@ -1,0 +1,4 @@
+def ar(n):
+    c=n[::-1]
+    return c
+print(ar([1,2,3,4,6,8]))

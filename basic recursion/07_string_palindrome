@@ -1,0 +1,7 @@
+def palindrome(i,s):
+    if i>=(len(s)//2):
+        return "Palindrome"
+    if s[i]!=s[len(s)-i-1]:
+        return "Not A Palindrome"
+    return palindrome(i+1,s)
+print(palindrome(0,"nitin"))
