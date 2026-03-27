@@ -1,0 +1,20 @@
+def r_bubble(arr,n):
+    if n==1:
+        return
+    swap=False
+    for i in range(n-1):
+        if arr[i]>arr[i+1]:
+            arr[i],arr[i+1]=arr[i+1],arr[i]
+            swap=True
+    if not swap:
+        return
+    r_bubble(arr,n-1)
+
+arr = [13, 46, 24, 52, 20, 9]
+print("Before Using Bubble Sort:")
+print(arr)
+
+r_bubble(arr, len(arr))
+
+print("After Using Bubble Sort:")
+print(arr)
