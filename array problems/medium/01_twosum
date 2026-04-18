@@ -1,0 +1,22 @@
+def twosum(arr,n):
+    left=0
+    right=len(arr)-1
+    sum=0
+    nums_index=[(num,idx) for idx , num in enumerate(arr)]
+    nums_index.sort(key=lambda x :x[0])
+    while left<right:
+        sum=nums_index[left][0]+nums_index[right][0]
+        if sum==n:
+            return "yes" , nums_index[left][1], nums_index[right][1]
+        else:
+            if sum<n:
+                left+=1
+            else:
+                right-=1
+    return "no" , -1,-1
+
+arr=[2,6,5,8,11]
+n= 14
+status,a,b=twosum(arr,n)
+print(status,a,b)
+
