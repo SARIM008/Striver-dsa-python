@@ -1,0 +1,18 @@
+def pos_neg(arr):
+    l=[0]*len(arr)
+    p_idx=0
+    n_idx=1
+    for i in range(len(arr)):
+        if arr[i]<0:
+            l[n_idx]=arr[i]
+            n_idx+=2
+        else:
+            l[p_idx]=arr[i]
+            p_idx+=2
+    return l
+arr=[1,2,-4,-5]
+print(pos_neg(arr))
+
+        
+
+

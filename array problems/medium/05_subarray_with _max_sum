@@ -1,0 +1,20 @@
+def sub_lsum(arr):
+    m_sum=0
+    r_sum=0
+    s=0
+    s_1=-1
+    e_1=-1
+    for i in range(len(arr)):
+        r_sum+=arr[i]
+        if r_sum<0:
+            r_sum=0
+            s=i+1
+        elif m_sum <= r_sum:
+            m_sum=r_sum
+            s_1=s
+            e_1=i
+    return m_sum,arr[s_1:e_1+1]
+
+arr= [2, 3, 5, -2, 7, -4]  
+a,b=sub_lsum(arr)
+print(a,b)

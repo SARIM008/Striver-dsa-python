@@ -1,0 +1,21 @@
+def majority(arr):
+    count=0
+    el=0
+    for i in range(len(arr)):
+        if count==0:
+            count=1
+            el=arr[i]
+        elif arr[i]==el:
+            count+=1
+        else:
+            count-=1
+    count=arr.count(el)
+    if count>len(arr)//2:
+        return el
+    else:
+        return -1
+        
+    
+
+arr=[7, 0, 0, 1, 7, 7, 2, 7, 7]  
+print(majority(arr))

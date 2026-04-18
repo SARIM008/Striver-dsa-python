@@ -1,0 +1,13 @@
+def stock(arr):
+    profit=0
+    min=100000000000
+    t_p=0
+    for i in range(len(arr)):
+        if arr[i]<min:
+            min=arr[i]
+        t_p=arr[i]-min
+        if t_p>profit:
+            profit=t_p
+    return profit
+arr=[7,1,5,3,6,4]
+print(stock(arr))
