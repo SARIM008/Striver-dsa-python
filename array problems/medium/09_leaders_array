@@ -1,0 +1,13 @@
+def leaders(arr):
+    max=arr[-1]
+    l=[]
+    l.append(max)
+    for i in range(len(arr)-1,-1,-1):
+        if arr[i]>max:
+            max=arr[i]
+            l.append(max)
+    l.reverse()
+    return l
+
+arr = [4, 7, 1, 0]  
+print(leaders(arr))
