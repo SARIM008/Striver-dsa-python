@@ -1,0 +1,18 @@
+def prefix(arr, k):
+    prefix_map = {0: 1}
+    prefix = 0
+    count = 0
+
+    for num in arr:
+        prefix += num
+        count += prefix_map.get(prefix - k, 0)
+        prefix_map[prefix] = prefix_map.get(prefix, 0) + 1
+
+    return count
+
+# Input array
+arr = [3, 1, 2, 4]
+
+# Target sum
+k = 6
+print(prefix(arr,k))
