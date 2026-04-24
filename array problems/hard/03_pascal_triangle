@@ -1,0 +1,12 @@
+def pascal_row(n):
+    for j in range(n):
+        ans = 1
+        print(ans, end=" ")
+        
+        for i in range(1, j + 1):
+            ans = ans * (j - i + 1) // i
+            print(ans, end=" ")
+        
+        print()  # move to next row
+
+pascal_row(6)

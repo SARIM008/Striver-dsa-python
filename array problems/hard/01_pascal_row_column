@@ -1,0 +1,11 @@
+def pascal(n,r):
+    res=1
+    n=n-1
+    r=r-1
+    for i in range(r):
+        res*=(n-i)
+        res/=i+1
+    return res
+
+print(pascal(10,6))
+
