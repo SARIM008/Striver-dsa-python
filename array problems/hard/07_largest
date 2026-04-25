@@ -1,0 +1,16 @@
+def maxLen(A):
+    mpp = {0: -1}   # handles sum = 0 case automatically
+    maxi = 0
+    s = 0
+
+    for i in range(len(A)):
+        s += A[i]
+
+        if s in mpp:
+            maxi = max(maxi, i - mpp[s])
+        else:
+            mpp[s] = i
+
+    return maxi
+A = [9, -3, 3, -1, 6, -5]
+print(maxLen(A))
