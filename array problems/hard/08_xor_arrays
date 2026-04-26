@@ -1,0 +1,16 @@
+def xor_arr(ar,k):
+    f={0:1}
+    prefix=0
+    count=0
+    for i in ar:
+        prefix^=i
+        rp=prefix^k
+        if rp in f:
+            count+=f[rp]
+        f[prefix]=f.get(prefix,0)+1
+    return count
+
+ar=[4, 2, 2, 6, 4]
+k = 6
+#Output: 4
+print(xor_arr(ar,k))
