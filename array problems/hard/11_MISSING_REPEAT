@@ -1,0 +1,17 @@
+def miss(arr):
+    n=len(arr)
+    sn=(n*(n+1))/2
+    sn2=(n*(n+1)*(2*n+1))/6
+    s=0
+    s2=0
+    for i in arr:
+        s+=i
+        s2+=(i*i)
+    v1=s-sn
+    v2=s2-sn2
+    v2=v2//v1
+    x=(v1+v2)//2
+    y=x-v1
+    return [x,y]
+arr=[3, 1, 2, 5, 4, 6, 7, 5]
+print(miss(arr))
