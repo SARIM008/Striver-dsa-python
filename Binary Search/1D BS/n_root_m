@@ -1,0 +1,13 @@
+def n_root_m(n,m):
+    l=1
+    h=m
+    while l<h:
+        mid=(l+h)//2
+        if mid**n==m:
+            return mid
+        elif mid**n>m:
+            h=mid-1
+        else:
+            l=mid+1
+    return -1
+print(n_root_m(4,69))
