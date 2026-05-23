@@ -1,0 +1,65 @@
+class RoseGarden:
+
+    # Check if it is possible to make m bouquets on 'day'
+    def is_possible(self, bloom_days, day, m, k):
+
+        count = 0       # consecutive flowers bloomed
+        bouquets = 0    # bouquets formed
+
+        for bloom in bloom_days:
+
+            # flower has bloomed
+            if bloom <= day:
+                count += 1
+
+                # one bouquet formed
+                if count == k:
+                    bouquets += 1
+                    count = 0
+
+            # flower not bloomed yet
+            else:
+                count = 0
+
+        return bouquets >= m
+
+    # Find minimum day
+    def rose_garden(self, bloom_days, k, m):
+
+        # not enough flowers
+        if m * k > len(bloom_days):
+            return -1
+
+        low = min(bloom_days)
+        high = max(bloom_days)
+
+        answer = -1
+
+        # binary search on days
+        while low <= high:
+
+            mid = (low + high) // 2
+
+            # possible to make bouquets
+            if self.is_possible(bloom_days, mid, m, k):
+                answer = mid
+                high = mid - 1
+
+            # need more days
+            else:
+                low = mid + 1
+
+        return answer
+# Driver Code
+garden = RoseGarden()
+
+bloom_days = [7, 7, 7, 7, 13, 11, 12, 7]
+k = 3
+m = 2
+
+result = garden.rose_garden(bloom_days, k, m)
+
+if result == -1:
+    print("We cannot make m bouquets.")
+else:
+    print("Minimum day =", result)
