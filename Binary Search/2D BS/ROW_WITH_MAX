@@ -1,0 +1,29 @@
+def lb(arr,m):
+    l=0
+    h=m-1
+    while l<=h:
+        mid=(l+h)//2
+        if arr[mid]==1:
+            h=mid-1
+        else:
+            l=mid+1
+    return mid
+
+
+
+
+
+    
+def max_ones(arr,n,m):
+    cnt_max=0
+    cnt_index=-1
+    for i in range(n):
+        cnt_ones=m-lb(arr[i],m)
+        if cnt_ones>cnt_max:
+            cnt_max=cnt_ones
+            cnt_index=i
+    return cnt_index
+        
+arr = [[0, 0, 1], [0, 1, 1], [0, 0, 0]]
+n, m = 3, 3
+print(max_ones(arr,n,m))
