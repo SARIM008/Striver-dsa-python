@@ -1,0 +1,11 @@
+def l_prefix(arr):
+    arr.sort()
+    count=0
+    for i in range(0,len(arr[0])):
+        if arr[0][i]==arr[-1][i]:
+            count+=1
+        else:
+            break
+    return arr[0][0:count]
+arr=["flower","flow","flight"]
+print(l_prefix(arr))
